@@ -225,7 +225,7 @@ export default function GlobalStyle() {
           width: 580px;
           height: 720px;
           position: absolute;
-          right: 10%;
+          right: 0;
           bottom: 0;
         }
 

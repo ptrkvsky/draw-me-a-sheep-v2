@@ -18,19 +18,30 @@ const Nom = styled('h1')`
   line-height: 0.75;
 `
 const SubHeading = styled('h2')`
-  margin-top: 40px;
+  margin-top: 61px;
   font-size: 40px;
   text-transform: uppercase;
   font-weight: 600;
   line-height: 1;
   color: #000;
 `
-
 const Description = styled('p')`
+  max-width: 171px;
   margin-top: 40px;
-  max-width: 464px;
   font-size: 12px;
   line-height: 1.4;
 `
 
-export { BlockText, Nom, SubHeading, Description }
+const Autistic = styled('p')`
+  position: absolute;
+  top: 150px;
+  left: -113px;
+  color: #efde74;
+  z-index: -1;
+  font-size: 150px;
+  font-weight: 600;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+`
+
+export { BlockText, Nom, SubHeading, Description, Autistic }

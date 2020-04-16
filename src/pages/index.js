@@ -7,11 +7,17 @@ import hoverEffect from 'hover-effect'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 import blake from '../images/vignettes/blake.png'
-import woman1 from '../images/vignettes/02.png'
-import woman2 from '../images/vignettes/03.png'
+import woman1 from '../images/tocard1.jpg'
+import woman2 from '../images/tocard2.jpg'
 import diss from '../images/displacement/diss.png'
 
-import { Nom, BlockText, SubHeading, Description } from '../styles/pages/index'
+import {
+  Nom,
+  BlockText,
+  SubHeading,
+  Description,
+  Autistic,
+} from '../styles/pages/index'
 
 const IndexPage = () => {
   const tl = useRef()
@@ -19,6 +25,9 @@ const IndexPage = () => {
   const nom = useRef(null)
   const subnom = useRef(null)
   const subheading = useRef(null)
+  const description = useRef(null)
+  const autistic = useRef(null)
+  const distortion = useRef(null)
 
   const overlay1 = useRef(null)
   const overlay2 = useRef(null)
@@ -99,17 +108,47 @@ const IndexPage = () => {
       '-=1.2'
     )
 
+    tl.current.from(
+      description.current,
+      1.5,
+      {
+        y: '100%',
+        ease: Expo.easeInOut,
+      },
+      '-=1.2'
+    )
     // MEDIA
-    TweenMax.staggerFrom(
+    tl.current.from(
       '.media_item',
       1.5,
       {
-        delay: 1.5,
         opacity: 0,
         x: '-20',
         ease: Expo.easeInOut,
       },
-      0.08
+      '-=1'
+    )
+
+    tl.current.from(
+      autistic.current,
+      1.5,
+      {
+        delay: 0,
+        opacity: 0,
+        x: '-10000',
+        ease: Expo.easeInOut,
+      },
+      '-=1.5'
+    )
+    tl.current.from(
+      '.distortion',
+      2,
+      {
+        opacity: 0,
+        y: '20',
+        ease: Expo.easeInOut,
+      },
+      '-=1.3'
     )
 
     TweenMax.from('.text h3 .hidetext', 1.5, {
@@ -123,6 +162,7 @@ const IndexPage = () => {
       y: '100%',
       ease: Expo.easeInOut,
     })
+
     /*
     // OVERLAY
     TweenMax.to(overlay1.current, 1.5, {
@@ -169,7 +209,7 @@ const IndexPage = () => {
             <ion-icon name="ios-menu"></ion-icon>
           </div>
           <div ref={navBarDiv} className="lang">
-            eng
+            GLHF
           </div>
           <div ref={navBarDiv} className="search">
             <ion-icon name="ios-search"></ion-icon>
@@ -179,13 +219,13 @@ const IndexPage = () => {
         <div className="media">
           <ul>
             <li className="media_item" ref={media}>
-              facebook
+              Github
             </li>
             <li className="media_item" ref={media}>
-              instagram
+              JVC
             </li>
             <li className="media_item" ref={media}>
-              twitter
+              Reddit
             </li>
           </ul>
         </div>
@@ -204,20 +244,27 @@ const IndexPage = () => {
                 </span>
               </span>
             </Nom>
+            <Autistic className="hide-text autistic">
+              <span ref={autistic} className="d-block">
+                Autistic
+              </span>
+            </Autistic>
             <SubHeading className="hide-text">
               <span className="d-block" ref={subheading}>
                 Developer <br />
                 Autistic
               </span>
             </SubHeading>
-            <Description>
-              Je suis incapable de faire de l'intégration correctement, si
-              seulement je pouvais avoir du talent et un sexe de 23cm.
+            <Description className="hide-text">
+              <p className="d-block" ref={description}>
+                Je suis incapable de faire de l'intégration correctement, si
+                seulement je pouvais avoir du talent et un sexe de 23cm.
+              </p>
             </Description>
           </div>
         </BlockText>
 
-        <div className="distortion"></div>
+        <div ref={distortion} className="distortion"></div>
       </div>
     </Layout>
   )
