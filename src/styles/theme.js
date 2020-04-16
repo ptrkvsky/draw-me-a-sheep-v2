@@ -7,7 +7,7 @@ const theme = {
     main: '#D8DBE2',
   },
   fonts: {
-    primary: "'Open Sans', serif",
+    primary: "'Poppins', sans-serif",
     title: "'Ubuntu', serif",
   },
   fontSize: {

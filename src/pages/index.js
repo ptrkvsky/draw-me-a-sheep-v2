@@ -1,7 +1,7 @@
 /* eslint-disable new-cap */
 /* eslint-disable no-new */
 import React, { useEffect, useState, useRef } from 'react'
-import { TweenMax, Expo } from 'gsap'
+import gsap, { TweenMax, Expo, TimelineLite } from 'gsap'
 import * as THREE from 'three'
 import hoverEffect from 'hover-effect'
 import Layout from '../components/layout/layout'
@@ -11,10 +11,21 @@ import woman1 from '../images/vignettes/02.png'
 import woman2 from '../images/vignettes/03.png'
 import diss from '../images/displacement/diss.png'
 
+import { Nom, BlockText, SubHeading, Description } from '../styles/pages/index'
+
 const IndexPage = () => {
+  const tl = useRef()
+
+  const nom = useRef(null)
+  const subnom = useRef(null)
+  const subheading = useRef(null)
+
   const overlay1 = useRef(null)
   const overlay2 = useRef(null)
   const overlay3 = useRef(null)
+
+  const media = useRef(null)
+
   const navBarDiv = useRef(null)
 
   useEffect(() => {
@@ -29,6 +40,90 @@ const IndexPage = () => {
       displacementImage: diss,
     })
 
+    tl.current = gsap.timeline()
+
+    // == OVERLAY == //
+    tl.current.to(overlay1.current, 1.5, {
+      delay: 0.5,
+      top: '-100%',
+      ease: Expo.easeInOut,
+    })
+
+    tl.current.to(
+      overlay2.current,
+      1.5,
+      {
+        top: '-100%',
+        ease: Expo.easeInOut,
+      },
+      '-=1.3'
+    )
+    tl.current.to(
+      overlay3.current,
+      1.5,
+      {
+        top: '-100%',
+        ease: Expo.easeInOut,
+      },
+      '-=1.3'
+    )
+
+    // == TEXT == //
+    tl.current.from(
+      nom.current,
+      1.5,
+      {
+        y: '100%',
+        ease: Expo.easeInOut,
+      },
+      '-=1.3'
+    )
+
+    tl.current.from(
+      subnom.current,
+      1.5,
+      {
+        y: '100%',
+        ease: Expo.easeInOut,
+      },
+      '-=1.3'
+    )
+
+    tl.current.from(
+      subheading.current,
+      1.5,
+      {
+        y: '100%',
+        ease: Expo.easeInOut,
+      },
+      '-=1.2'
+    )
+
+    // MEDIA
+    TweenMax.staggerFrom(
+      '.media_item',
+      1.5,
+      {
+        delay: 1.5,
+        opacity: 0,
+        x: '-20',
+        ease: Expo.easeInOut,
+      },
+      0.08
+    )
+
+    TweenMax.from('.text h3 .hidetext', 1.5, {
+      delay: 1.2,
+      y: '100%',
+      ease: Expo.easeInOut,
+    })
+
+    TweenMax.from('.text p .hidetext', 1.5, {
+      delay: 1.3,
+      y: '100%',
+      ease: Expo.easeInOut,
+    })
+    /*
     // OVERLAY
     TweenMax.to(overlay1.current, 1.5, {
       delay: 0.5,
@@ -47,6 +142,7 @@ const IndexPage = () => {
       top: '-100%',
       ease: Expo.easeInOut,
     })
+    */
 
     TweenMax.staggerFrom(
       navBarDiv.current,
@@ -82,31 +178,44 @@ const IndexPage = () => {
 
         <div className="media">
           <ul>
-            <li>facebook</li>
-            <li>instagram</li>
-            <li>twitter</li>
+            <li className="media_item" ref={media}>
+              facebook
+            </li>
+            <li className="media_item" ref={media}>
+              instagram
+            </li>
+            <li className="media_item" ref={media}>
+              twitter
+            </li>
           </ul>
         </div>
 
-        <div className="text">
-          <h1>
-            <span className="hidetext">PETRI&KOVSKY</span>
-          </h1>
-          <h2>duality</h2>
-          <h3>
-            <span className="hidetext">
-              collection 2017 <br />
-              duality
-            </span>
-          </h3>
-          <p>
-            <span className="hidetext">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
-              quis, delectus facere neque sunt commodi quae culpa dolores
-              doloribus magnam?
-            </span>
-          </p>
-        </div>
+        <BlockText className="block-text">
+          <div className="relative">
+            <Nom>
+              <span className="hide-text">
+                <span className="d-block" ref={nom}>
+                  PETRI&
+                </span>
+              </span>
+              <span className="hide-text">
+                <span className="d-block" ref={subnom}>
+                  KOVSKY
+                </span>
+              </span>
+            </Nom>
+            <SubHeading className="hide-text">
+              <span className="d-block" ref={subheading}>
+                Developer <br />
+                Autistic
+              </span>
+            </SubHeading>
+            <Description>
+              Je suis incapable de faire de l'intégration correctement, si
+              seulement je pouvais avoir du talent et un sexe de 23cm.
+            </Description>
+          </div>
+        </BlockText>
 
         <div className="distortion"></div>
       </div>

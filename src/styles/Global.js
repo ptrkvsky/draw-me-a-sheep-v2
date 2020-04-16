@@ -135,7 +135,8 @@ export default function GlobalStyle() {
         /* -------------- */
         /*  TWEAK GATSBY  */
         /* -------------- */
-        .tl-edges {
+        .tl-edges,
+        main {
           min-height: 100vh;
         }
 
@@ -149,6 +150,7 @@ export default function GlobalStyle() {
           font-size: 18px;
           font-family: ${theme.fonts.primary};
           min-height: 100vh;
+          overflow: hidden;
         }
 
         img {
@@ -168,8 +170,16 @@ export default function GlobalStyle() {
           margin-right: auto;
         }
 
-        /* NAVBAR
-=========================== */
+        .d-block {
+          display: block;
+        }
+
+        .hide-text {
+          display: block;
+          overflow: hidden;
+        }
+
+        /* NAVBAR */
         .navbar {
           display: flex;
           justify-content: space-between;
@@ -209,100 +219,13 @@ export default function GlobalStyle() {
           padding: 0 30px;
         }
 
-        /* TEXT
-=========================== */
-        .text {
-          position: absolute;
-          top: 200px;
-          left: 100px;
-          transform: rotate(-90deg);
-        }
-
-        .text h1 {
-          font-size: 120px;
-          text-transform: uppercase;
-          font-weight: 900;
-          letter-spacing: -10px;
-          margin-bottom: 20px;
-
-          position: relative;
-          overflow: hidden;
-          height: 150px;
-          width: 600px;
-        }
-        .text h1 .hidetext {
-          position: absolute;
-        }
-
-        .text h2 {
-          position: absolute;
-          top: 40px;
-          left: -80px;
-          color: #efde74;
-          z-index: -1;
-          font-size: 150px;
-          font-weight: 600;
-          letter-spacing: 8px;
-          text-transform: uppercase;
-        }
-
-        .text h3 {
-          font-size: 40px;
-          text-transform: uppercase;
-          font-weight: 600;
-          line-height: 1;
-
-          position: relative;
-          overflow: hidden;
-          height: 80px;
-        }
-        .text h3 .hidetext {
-          position: absolute;
-        }
-
-        .text p {
-          width: 200px;
-          font-size: 12px;
-          margin-top: 30px;
-          font-weight: 500;
-
-          position: relative;
-          overflow: hidden;
-          height: 110px;
-        }
-        .text p .hidetext {
-          position: absolute;
-        }
-
-        /* SPONSOR
-=========================== */
-        .sponsor {
-          position: absolute;
-          right: 100px;
-          bottom: 100px;
-          text-align: center;
-        }
-
-        .sponsor img {
-          width: 200px;
-          transform: rotate(-90deg);
-        }
-
-        .sponsor p {
-          margin-top: 20px;
-          font-size: 12px;
-          text-transform: uppercase;
-          font-weight: 900;
-          transform: rotate(180deg);
-        }
-
         /* DISTORTION
 =========================== */
         .distortion {
           width: 580px;
           height: 720px;
           position: absolute;
-          right: 300px;
+          right: 10%;
           bottom: 0;
         }
 
