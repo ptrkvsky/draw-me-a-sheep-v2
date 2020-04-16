@@ -7,7 +7,6 @@ import Sidebar from './sidebar'
 const Layout = ({ children }) => (
   <>
     <GlobalStyle />
-    <Sidebar />
     <main>{children}</main>
     <footer>
       © {new Date().getFullYear()}, Built with

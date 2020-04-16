@@ -4,7 +4,7 @@ const theme = {
     primary: '#303030',
   },
   bg: {
-    main: '#FFF',
+    main: '#D8DBE2',
   },
   fonts: {
     primary: "'Open Sans', serif",

@@ -1,67 +1,114 @@
+/* eslint-disable new-cap */
+/* eslint-disable no-new */
 import React, { useEffect, useState, useRef } from 'react'
-import gsap from 'gsap'
+import { TweenMax, Expo } from 'gsap'
 import * as THREE from 'three'
 import hoverEffect from 'hover-effect'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 import blake from '../images/vignettes/blake.png'
-import diss from '../images/displacement/1.jpg'
+import woman1 from '../images/vignettes/02.png'
+import woman2 from '../images/vignettes/03.png'
+import diss from '../images/displacement/diss.png'
 
 const IndexPage = () => {
+  const overlay1 = useRef(null)
+  const overlay2 = useRef(null)
+  const overlay3 = useRef(null)
+  const navBarDiv = useRef(null)
+
   useEffect(() => {
     new hoverEffect({
-      parent: document.querySelector('.ticket'),
+      parent: document.querySelector('.distortion'),
       intensity1: 0.1,
       intensity2: 0.1,
       angle2: Math.PI / 2,
-      image1: blake,
-      image2:
-        'https://images.unsplash.com/photo-1584944471186-8568e2793a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-      displacementImage:
-        'https://cdn.rawgit.com/robin-dela/hover-effect/b6c6fd26/images/stripe1mul.png?raw=true',
+      image1: woman1,
+      image2: woman2,
+      imagesRatio: 380 / 300,
+      displacementImage: diss,
     })
-    console.log(hoverEffect)
-    /*
-    tl.current = gsap.timeline({ paused: true })
-    tl.current.addLabel('startPoint')
 
-    tl.current.to('#illuHeroHome .illu', {
-      duration: 0.5,
-      x: '10%',
-      opacity: 0,
+    // OVERLAY
+    TweenMax.to(overlay1.current, 1.5, {
+      delay: 0.5,
+      top: '-100%',
+      ease: Expo.easeInOut,
     })
-    tl.current.to('.InfosIconsDetailContainer', {
-      duration: 0.5,
-      Y: '10%',
-      opacity: 0,
+
+    TweenMax.to(overlay2.current, 1.5, {
+      delay: 0.7,
+      top: '-100%',
+      ease: Expo.easeInOut,
     })
-    tl.current.to(
-      '#titleAndButton',
+
+    TweenMax.to(overlay3.current, 1.5, {
+      delay: 0.9,
+      top: '-100%',
+      ease: Expo.easeInOut,
+    })
+
+    TweenMax.staggerFrom(
+      navBarDiv.current,
+      1.5,
       {
-        duration: 0.5,
-        x: '-10%',
+        delay: 1.5,
         opacity: 0,
+        y: '20',
+        ease: Expo.easeInOut,
       },
-      '-=0.75'
+      0.08
     )
-    */
   }, [])
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="ticket">
-        <div className="overlay"></div>
-        <div className="flight-info">
-          <h3>JUNE 30 2018 12:30PM</h3>
-          <div className="flight-locations">
-            <h1>LAX</h1>
-            <img
-              alt="avion"
-              src="https://cdn-images-1.medium.com/max/800/1*QFU_XYAKOGJ9nunfqvem1w.png"
-            />
-            <h1>JFK</h1>
+      <div className="wrapper">
+        <div ref={overlay1} className="overlay first"></div>
+        <div ref={overlay2} className="overlay second"></div>
+        <div ref={overlay3} className="overlay third"></div>
+
+        <nav className="navbar">
+          <div ref={navBarDiv} className="menu">
+            <ion-icon name="ios-menu"></ion-icon>
           </div>
+          <div ref={navBarDiv} className="lang">
+            eng
+          </div>
+          <div ref={navBarDiv} className="search">
+            <ion-icon name="ios-search"></ion-icon>
+          </div>
+        </nav>
+
+        <div className="media">
+          <ul>
+            <li>facebook</li>
+            <li>instagram</li>
+            <li>twitter</li>
+          </ul>
         </div>
+
+        <div className="text">
+          <h1>
+            <span className="hidetext">PETRI&KOVSKY</span>
+          </h1>
+          <h2>duality</h2>
+          <h3>
+            <span className="hidetext">
+              collection 2017 <br />
+              duality
+            </span>
+          </h3>
+          <p>
+            <span className="hidetext">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
+              quis, delectus facere neque sunt commodi quae culpa dolores
+              doloribus magnam?
+            </span>
+          </p>
+        </div>
+
+        <div className="distortion"></div>
       </div>
     </Layout>
   )
