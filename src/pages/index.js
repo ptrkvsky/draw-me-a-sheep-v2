@@ -219,13 +219,31 @@ const IndexPage = () => {
         <div className="media">
           <ul>
             <li className="media_item" ref={media}>
-              Github
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://github.com/ptrkvsky/draw-me-a-sheep-v2"
+              >
+                Github
+              </a>
             </li>
             <li className="media_item" ref={media}>
-              JVC
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="http://www.jeuxvideo.com/profil/barbegrasse"
+              >
+                JVC
+              </a>
             </li>
             <li className="media_item" ref={media}>
-              Reddit
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://www.reddit.com/r/Miss_Impulse/"
+              >
+                Reddit
+              </a>
             </li>
           </ul>
         </div>

@@ -206,8 +206,8 @@ export default function GlobalStyle() {
 =========================== */
         .media ul {
           position: absolute;
-          bottom: 250px;
-          left: -140px;
+          bottom: 240px;
+          left: -120px;
           transform: rotate(-90deg);
         }
 
