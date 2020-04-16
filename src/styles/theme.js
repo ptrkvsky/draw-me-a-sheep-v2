@@ -1,9 +1,7 @@
 const theme = {
   colors: {
-    main: '#0c0c0c',
-    primary: '#230066',
-    separator: '#d5dae3',
-    lilac: '#8024ff',
+    main: '#383639',
+    primary: '#303030',
   },
   bg: {
     main: '#FFF',

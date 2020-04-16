@@ -71,7 +71,6 @@ export default function GlobalStyle() {
         td,
         article,
         aside,
-        canvas,
         details,
         embed,
         figure,
@@ -167,6 +166,22 @@ export default function GlobalStyle() {
           max-width: 100%;
           margin-left: auto;
           margin-right: auto;
+        }
+        .ticket {
+          position: relative;
+          height: 410px;
+          width: 690px;
+          background: black;
+          display: flex;
+          align-items: flex-end;
+          box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.4);
+        }
+        canvas {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 6px;
+          z-index: 0;
         }
       `}
     />
