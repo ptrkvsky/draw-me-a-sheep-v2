@@ -177,7 +177,7 @@ const IndexPage = () => {
   }, [])
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Johan Petrikovsky" />
       <div className="wrapper">
         <div ref={overlay1} className="overlay first"></div>
         <div ref={overlay2} className="overlay second"></div>
