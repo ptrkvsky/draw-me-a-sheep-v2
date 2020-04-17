@@ -198,18 +198,30 @@ const IndexPage = () => {
         <div className="media">
           <ul>
             <li className="media_item" ref={media}>
-              <a rel="noopener noreferrer" target="_blank" href="#">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://github.com/ptrkvsky/draw-me-a-sheep-v2"
+              >
                 Github
               </a>
             </li>
             <li className="media_item" ref={media}>
-              <a rel="noopener noreferrer" target="_blank" href="#">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://github.com/ptrkvsky/draw-me-a-sheep-v2"
+              >
                 JVC
               </a>
             </li>
             <li className="media_item" ref={media}>
-              <a rel="noopener noreferrer" target="_blank" href="#">
-                Reddit
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://twitter.com/kovskyD"
+              >
+                Twitter
               </a>
             </li>
           </ul>
