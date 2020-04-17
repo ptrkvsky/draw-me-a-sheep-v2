@@ -163,27 +163,6 @@ const IndexPage = () => {
       ease: Expo.easeInOut,
     })
 
-    /*
-    // OVERLAY
-    TweenMax.to(overlay1.current, 1.5, {
-      delay: 0.5,
-      top: '-100%',
-      ease: Expo.easeInOut,
-    })
-
-    TweenMax.to(overlay2.current, 1.5, {
-      delay: 0.7,
-      top: '-100%',
-      ease: Expo.easeInOut,
-    })
-
-    TweenMax.to(overlay3.current, 1.5, {
-      delay: 0.9,
-      top: '-100%',
-      ease: Expo.easeInOut,
-    })
-    */
-
     TweenMax.staggerFrom(
       navBarDiv.current,
       1.5,
@@ -219,29 +198,17 @@ const IndexPage = () => {
         <div className="media">
           <ul>
             <li className="media_item" ref={media}>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://github.com/ptrkvsky/draw-me-a-sheep-v2"
-              >
+              <a rel="noopener noreferrer" target="_blank" href="#">
                 Github
               </a>
             </li>
             <li className="media_item" ref={media}>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href="http://www.jeuxvideo.com/profil/barbegrasse"
-              >
+              <a rel="noopener noreferrer" target="_blank" href="#">
                 JVC
               </a>
             </li>
             <li className="media_item" ref={media}>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.reddit.com/r/Miss_Impulse/"
-              >
+              <a rel="noopener noreferrer" target="_blank" href="#">
                 Reddit
               </a>
             </li>
@@ -275,8 +242,8 @@ const IndexPage = () => {
             </SubHeading>
             <Description className="hide-text">
               <p className="d-block" ref={description}>
-                Je suis incapable de faire de l'intégration correctement, si
-                seulement je pouvais avoir du talent et un sexe de 23cm.
+                Au secours aidez moi, je fais du Java 8h par jour depuis des
+                mois. J'ai peur de ne pas survivre très longtemps.
               </p>
             </Description>
           </div>
