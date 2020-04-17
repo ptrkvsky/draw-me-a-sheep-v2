@@ -3,13 +3,14 @@
 import React, { useEffect, useState, useRef } from 'react'
 import gsap, { TweenMax, Expo, TimelineLite } from 'gsap'
 import * as THREE from 'three'
+
 import hoverEffect from 'hover-effect'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
-import blake from '../images/vignettes/blake.png'
 import woman1 from '../images/tocard1.jpg'
 import woman2 from '../images/tocard2.jpg'
 import diss from '../images/displacement/diss.png'
+import MouseTrail from '../animation/mousetrail'
 
 import {
   Nom,
@@ -178,6 +179,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Johan Petrikovsky" />
+      <MouseTrail />
       <div className="wrapper">
         <div ref={overlay1} className="overlay first"></div>
         <div ref={overlay2} className="overlay second"></div>
@@ -227,7 +229,7 @@ const IndexPage = () => {
           </ul>
         </div>
 
-        <BlockText className="block-text">
+        <BlockText className="block-text" onMouseEnter={console.log()}>
           <div className="relative">
             <Nom>
               <span className="hide-text">
