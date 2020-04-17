@@ -36,7 +36,7 @@ const Autistic = styled('p')`
   position: absolute;
   top: 150px;
   left: -113px;
-  color: #efde74;
+  color: #ffdc1e;
   z-index: -1;
   font-size: 150px;
   font-weight: 600;
