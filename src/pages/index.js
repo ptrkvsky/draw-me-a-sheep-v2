@@ -38,6 +38,10 @@ const IndexPage = () => {
 
   const navBarDiv = useRef(null)
 
+  const goNextPage = () => {
+    tl.current.reverse()
+  }
+
   useEffect(() => {
     new hoverEffect({
       parent: document.querySelector('.distortion'),
@@ -179,7 +183,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Johan Petrikovsky" />
-      <MouseTrail />
+      {/* <MouseTrail /> */}
       <div className="wrapper">
         <div ref={overlay1} className="overlay first"></div>
         <div ref={overlay2} className="overlay second"></div>
@@ -218,13 +222,7 @@ const IndexPage = () => {
               </a>
             </li>
             <li className="media_item" ref={media}>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://twitter.com/kovskyD"
-              >
-                Twitter
-              </a>
+              <span onClick={() => goNextPage()}>Twitter</span>
             </li>
           </ul>
         </div>

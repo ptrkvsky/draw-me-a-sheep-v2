@@ -174,6 +174,16 @@ export default function GlobalStyle() {
           display: block;
         }
 
+        .v-hidden {
+          visibility: hidden;
+        }
+
+        .v-align {
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+        }
+
         .hide-text {
           display: block;
           overflow: hidden;
